@@ -1,0 +1,13 @@
+{
+    "url": "https://salimah.sidinar.com/app/public/login",
+    "raw_url": "https://salimah.sidinar.com/app/public/login",
+    "method": "post",
+    "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "data": {
+        "_token": "Pn9U21W3sIEgL6z4P87kdzxgjWC5hsNigPFqx8e1",
+        "email": "firauncame@gmail.com",
+        "password": "PasswordBaruPoC123!"
+    }
+}
