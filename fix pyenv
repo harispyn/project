@@ -1,0 +1,140 @@
+Metode 3: Menggunakan pyenv (Untuk Developer)
+Jika Anda seorang developer yang sering bekerja dengan banyak versi Python, pyenv adalah alat terbaik.
+
+Instal pyenv:
+Ikuti instruksi instalasi dari GitHub pyenv-installer. Cara termudah adalah dengan skrip ini:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+curl https://pyenv.run | bash
+Konfigurasi Shell:
+Tambahkan baris berikut ke file ~/.bashrc atau ~/.zshrc Anda (tergantung shell yang digunakan).
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+2
+3
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+Setelah itu, restart terminal Anda atau jalankan source ~/.bashrc.
+Instal Python 3.12 dengan pyenv:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+2
+3
+4
+5
+# Lihat versi yang tersedia
+pyenv install --list | grep " 3.12"
+
+# Instal versi yang diinginkan
+pyenv install 3.12.0
+Gunakan Python 3.12:
+Secara global (untuk user Anda):
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+pyenv global 3.12.0
+Hanya untuk satu proyek (direktori):
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+2
+cd /path/to/your/project
+pyenv local 3.12.0
+Verifikasi Instalasi & Penggunaan
+Setelah menginstal dengan salah satu metode di atas, verifikasi instalasi Anda:
+
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+python3.12 --version
+Outputnya harusnya: Python 3.12.x
+
+Cara Menggunakannya:
+
+Menjalankan script: python3.12 nama_script.py
+Menggunakan pip: pip3.12 install nama_paket
+Praktik Terbaik: Gunakan Lingkungan Virtual (venv)
+Sangat disarankan untuk membuat lingkungan virtual terisolasi untuk setiap proyek Anda.
+
+Buat lingkungan virtual:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+python3.12 -m venv nama_env_saya
+Aktifkan lingkungan virtual:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+source nama_env_saya/bin/activate
+Prompt terminal Anda akan berubah, menunjukkan bahwa Anda berada di dalam lingkungan virtual.
+Sekarang, Anda bisa menggunakan python dan pip secara langsung:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+2
+3
+(nama_env_saya) $ python --version
+Python 3.12.x
+(nama_env_saya) $ pip install requests
+Untuk keluar dari lingkungan virtual:
+bash
+
+Line Wrapping
+
+Collapse
+Copy
+1
+deactivate
+Ringkasan Metode
+Metode
+Kelebihan
+Kekurangan
+Cocok Untuk
+PPA deadsnakes	Paling mudah, cepat, terintegrasi dengan sistem	Hanya untuk Ubuntu/Debian	Pemula dan pengguna Ubuntu/Debian
+Kompilasi Source	Universal, kontrol penuh, versi terbaru	Lebih lambat, lebih kompleks, butuh dependensi	Semua distro, pengguna yang butuh kontrol penuh
+pyenv	Mudah kelola banyak versi, per-proyek	Perlu setup awal, sedikit lebih kompleks	Developer yang sering ganti versi Python
+
+Pilih metode yang paling sesuai dengan kebutuhan dan distribusi Linux Anda. Untuk kebanyakan orang di Ubuntu, Metode 1 adalah pilihan terbaik.
+
+
+
